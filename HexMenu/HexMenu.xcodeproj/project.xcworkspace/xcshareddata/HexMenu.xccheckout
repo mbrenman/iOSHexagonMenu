@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7A380A4C-2DCD-4C98-9B42-68415DACA91A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HexMenu</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>678CF65CA6145B444A7D3DA8E07C136A8FD33DCA</key>
+		<string>https://github.com/mbrenman/iOSHexagonMenu.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HexMenu/HexMenu.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>678CF65CA6145B444A7D3DA8E07C136A8FD33DCA</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mbrenman/iOSHexagonMenu.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>678CF65CA6145B444A7D3DA8E07C136A8FD33DCA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>678CF65CA6145B444A7D3DA8E07C136A8FD33DCA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOSHexagonMenu</string>
+		</dict>
+	</array>
+</dict>
+</plist>

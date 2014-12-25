@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AAFC5DC51A4B7CFA004A112F"
+               BlueprintIdentifier = "AAF726CB1A4BDCE5000119F5"
                BuildableName = "HexMenu.app"
                BlueprintName = "HexMenu"
                ReferencedContainer = "container:HexMenu.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AAFC5DDE1A4B7CFA004A112F"
+               BlueprintIdentifier = "AAF726E41A4BDCE5000119F5"
                BuildableName = "HexMenuTests.xctest"
                BlueprintName = "HexMenuTests"
                ReferencedContainer = "container:HexMenu.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AAFC5DDE1A4B7CFA004A112F"
+               BlueprintIdentifier = "AAF726E41A4BDCE5000119F5"
                BuildableName = "HexMenuTests.xctest"
                BlueprintName = "HexMenuTests"
                ReferencedContainer = "container:HexMenu.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAFC5DC51A4B7CFA004A112F"
+            BlueprintIdentifier = "AAF726CB1A4BDCE5000119F5"
             BuildableName = "HexMenu.app"
             BlueprintName = "HexMenu"
             ReferencedContainer = "container:HexMenu.xcodeproj">
@@ -75,7 +75,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAFC5DC51A4B7CFA004A112F"
+            BlueprintIdentifier = "AAF726CB1A4BDCE5000119F5"
             BuildableName = "HexMenu.app"
             BlueprintName = "HexMenu"
             ReferencedContainer = "container:HexMenu.xcodeproj">
@@ -93,7 +93,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAFC5DC51A4B7CFA004A112F"
+            BlueprintIdentifier = "AAF726CB1A4BDCE5000119F5"
             BuildableName = "HexMenu.app"
             BlueprintName = "HexMenu"
             ReferencedContainer = "container:HexMenu.xcodeproj">
