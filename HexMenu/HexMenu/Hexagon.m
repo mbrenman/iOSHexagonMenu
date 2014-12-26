@@ -12,11 +12,14 @@
 @interface Hexagon ()
 - (void)respondToTapGesture:(UIGestureRecognizer *)recognizer;
 - (void)createHexagonIn:(CGRect)rect;
+- (float)randZeroOne;
 @end
 
 @implementation Hexagon
 
 - (void)baseInit {
+    srand(time(NULL));
+    
     _hexPath = nil;
     _clickable = NO;
     
@@ -75,7 +78,7 @@
     [_fillColor setFill];
     
     // Adjust the drawing options as needed.
-    _hexPath.lineWidth = 1;
+    _hexPath.lineWidth = 2;
     
     // Fill the path before stroking it so that the fill
     // color does not obscure the stroked line.
@@ -87,8 +90,16 @@
     CGPoint touchPoint = [recognizer locationInView:self];
 
     if ([_hexPath containsPoint:touchPoint]){
-        NSLog(@"HEX PATHHHHH");
+        _fillColor = [UIColor colorWithRed:[self randZeroOne] green:[self randZeroOne] blue:[self randZeroOne] alpha:1];
+        _strokeColor = [UIColor colorWithRed:[self randZeroOne] green:[self randZeroOne] blue:[self randZeroOne] alpha:1];
+        
+        //Redraw to update color
+        [self setNeedsDisplay];
     }
+}
+
+- (float)randZeroOne {
+    return (float)(arc4random()) / (float)(UINT32_MAX);
 }
 
 @end
