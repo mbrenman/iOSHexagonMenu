@@ -10,15 +10,29 @@
 #import "Hexagon.h"
 
 @interface ViewController ()
-
+- (void)createHexagons;
+- (void)respondToTapGesture:(UIGestureRecognizer *)recognizer;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
+    // Create and initialize a tap gesture
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
+                                             initWithTarget:self action:@selector(respondToTapGesture:)];
+    
+    // Specify that the gesture must be a single tap
+    tapRecognizer.numberOfTapsRequired = 1;
+    
+    // Add the tap gesture recognizer to the view
+    [self.view addGestureRecognizer:tapRecognizer];
+    
+    [self createHexagons];
+}
+
+- (void)createHexagons {
     float len = 75;
     
     float mid_x = CGRectGetMidX([self.view bounds]) - (len / 2);
@@ -51,11 +65,10 @@
     Hexagon *bottom_r = [[Hexagon alloc] initWithFrame:CGRectMake(mid_x + (len / 2), mid_y + (3 * len / 4), len, len)];
     [bottom_r setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:bottom_r];
-    
 }
 
-- (void)viewDidLayoutSubviews {
-    NSLog(@"HERE");
+- (void)respondToTapGesture:(UITapGestureRecognizer *)recognizer {
+    NSLog(@"TAP");
 }
 
 - (void)didReceiveMemoryWarning {
