@@ -71,7 +71,11 @@
 }
 
 - (void)drawRect:(CGRect)rect {
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    
     [self createHexagonIn:rect];
+    
+    NSLog(@"hhhhhhh");
     
     // Set the render colors.
     [_strokeColor setStroke];
@@ -84,6 +88,9 @@
     // color does not obscure the stroked line.
     [_hexPath fill];
     [_hexPath stroke];
+    
+    CGContextAddPath(ctx, _hexPath.CGPath);
+    CGContextStrokePath(ctx);
 }
 
 - (void)respondToTapGesture:(UITapGestureRecognizer *)recognizer {
@@ -95,6 +102,22 @@
         
         //Redraw to update color
         [self setNeedsDisplay];
+        
+        CGSize s = self.frame.size;
+        CGPoint o = self.frame.origin;
+        
+        [UIView animateWithDuration:1.0f
+                         animations:^{
+                             [self.layer displayIfNeeded];
+                             [self setFrame:CGRectMake(o.x + s.width / 2, o.y + s.height / 2, s.width / 100, s.height / 100)];                         }
+                         completion:^(BOOL finished){
+                             // Wait one second and then fade in the view
+                             [UIView animateWithDuration:1.0f
+                                              animations:^{
+                                                  [self setFrame:CGRectMake(o.x, o.y, s.width, s.height)];
+                                              }
+                                              completion:nil];
+        }];
     }
 }
 
