@@ -15,8 +15,10 @@
 
 @interface Hexagon : UIView
 
-@property (strong, nonatomic) UIBezierPath *hexPath;
+@property (nonatomic, strong,) UIBezierPath *hexPath;
 @property (assign) BOOL clickable;
+@property (nonatomic, weak) UIColor* fillColor;
+@property (nonatomic, weak) UIColor* strokeColor;
 
 @end
 

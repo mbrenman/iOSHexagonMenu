@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+const int NUM_HEXAGONS = 6;
+
 @interface ViewController : UIViewController
 
 
