@@ -109,12 +109,16 @@
         [UIView animateWithDuration:1.0f
                          animations:^{
                              [self.layer displayIfNeeded];
-                             [self setFrame:CGRectMake(o.x + s.width / 2, o.y + s.height / 2, s.width / 100, s.height / 100)];                         }
+                             [self setFrame:CGRectMake(o.x + s.width / 2, o.y + s.height / 2, s.width / 100, s.height / 100)];
+                             self.transform = CGAffineTransformRotate(self.transform, M_PI);
+                         }
                          completion:^(BOOL finished){
                              // Wait one second and then fade in the view
                              [UIView animateWithDuration:1.0f
                                               animations:^{
+                                                  [self.layer displayIfNeeded];
                                                   [self setFrame:CGRectMake(o.x, o.y, s.width, s.height)];
+                                                  self.transform = CGAffineTransformRotate(self.transform, M_PI);
                                               }
                                               completion:nil];
         }];
