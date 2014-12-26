@@ -36,24 +36,26 @@
     CGPoint origin = rect.origin;
     CGSize size = rect.size;
     
-    [_hexPath moveToPoint:CGPointMake(origin.x, origin.y)];
-    [_hexPath addLineToPoint:CGPointMake(origin.x + size.width, origin.y)];
-    [_hexPath addLineToPoint:CGPointMake(origin.x + size.width, origin.y + size.height)];
-    [_hexPath addLineToPoint:CGPointMake(origin.x, origin.y + size.height)];
+    float hex_side = MIN(size.width, size.height) * 0.95;
     
+    float buf = MIN(size.width, size.height) * 0.05;
+    
+    
+    //hexagon
+    [_hexPath moveToPoint:CGPointMake(origin.x + (hex_side / 2), origin.y + buf)];
+    [_hexPath addLineToPoint:CGPointMake(origin.x + hex_side - buf, (buf / 2) + origin.y + (hex_side / 4))];
+    [_hexPath addLineToPoint:CGPointMake(origin.x + hex_side - buf, (buf / 2) + origin.y + (3 * hex_side / 4) - buf)];
+    [_hexPath addLineToPoint:CGPointMake(origin.x + (hex_side / 2), origin.y + hex_side - buf)];
+    [_hexPath addLineToPoint:CGPointMake(origin.x + buf, origin.y + (3 * hex_side / 4) - (buf / 2))];
+    [_hexPath addLineToPoint:CGPointMake(origin.x + buf, (buf / 2) + origin.y + (hex_side  / 4))];
     [_hexPath closePath];
-    
-    UIColor *fillColor = [UIColor redColor];
-    [fillColor setFill];
-    UIColor *strokeColor = [UIColor blueColor];
-    [strokeColor setStroke];
     
     NSLog(@"about to draw from layout subview");
     if (_hexPath) {
 
         // Set the render colors.
-        [[UIColor blackColor] setStroke];
-        [[UIColor redColor] setFill];
+        [[UIColor whiteColor] setStroke];
+        [[UIColor lightGrayColor] setFill];
     
         // Adjust the drawing options as needed.
         _hexPath.lineWidth = 1;
