@@ -13,6 +13,7 @@
 - (void)createHexagons;
 //- (void)respondToTapGesture:(UIGestureRecognizer *)recognizer;
 @property (nonatomic, strong) NSMutableArray* hexagons;
+@property BOOL menuState;
 
 @end
 
@@ -21,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createHexagons];
+    _menuState = YES;
 }
 
 - (void)createHexagons {
@@ -89,9 +91,19 @@
     
     if (viewTag > 0) {
         NSLog(@"touched %d", viewTag);
-        Hexagon *touchedHex = [self.hexagons objectAtIndex:(viewTag - 1)];
-        [touchedHex animateWithTouch:touchPoint];
+        
+        //Center button is special
+        if (viewTag == 7) {
+            [self handleCenterButtonTap];
+        } else {
+            Hexagon *touchedHex = [self.hexagons objectAtIndex:(viewTag - 1)];
+            [touchedHex animateWithTouch:touchPoint];
+        }
     }
+}
+
+- (void)handleCenterButtonTap {
+    NSLog(@"CENTER");
 }
 
 - (void)didReceiveMemoryWarning {
