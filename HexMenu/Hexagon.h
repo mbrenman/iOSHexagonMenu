@@ -21,6 +21,7 @@
 @property (nonatomic, weak) UIColor* strokeColor;
 
 - (BOOL)hexagonPathContains:(CGPoint) point;
+- (void)animateWithTouch:(CGPoint)touch;
 
 @end
 

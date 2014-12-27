@@ -10,7 +10,6 @@
 #import "Hexagon.h"
 
 @interface Hexagon ()
-- (void)respondToTapGesture:(UIGestureRecognizer *)recognizer;
 - (void)createHexagonIn:(CGRect)rect;
 - (float)randZeroOne;
 @end
@@ -25,16 +24,6 @@
     
     _fillColor = [UIColor whiteColor];
     _strokeColor = [UIColor lightGrayColor];
-    
-    // Create and initialize a tap gesture
-    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
-                                             initWithTarget:self action:@selector(respondToTapGesture:)];
-    
-    // Specify that the gesture must be a single tap
-    tapRecognizer.numberOfTapsRequired = 1;
-    
-    // Add the tap gesture recognizer to the view
-    [self addGestureRecognizer:tapRecognizer];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -91,27 +80,26 @@
     CGContextStrokePath(ctx);
 }
 
-- (void)respondToTapGesture:(UITapGestureRecognizer *)recognizer {
-    CGPoint touchPoint = [recognizer locationInView:self];
-
-    if ([_hexPath containsPoint:touchPoint]){
+- (void)animateWithTouch:(CGPoint)touch {
+    
+    if ([_hexPath containsPoint:touch]) {
         _fillColor = [UIColor colorWithRed:[self randZeroOne] green:[self randZeroOne] blue:[self randZeroOne] alpha:1];
         _strokeColor = [UIColor colorWithRed:[self randZeroOne] green:[self randZeroOne] blue:[self randZeroOne] alpha:1];
-        
+    
         //Redraw to update color
         [self setNeedsDisplay];
-        
+    
         CGSize s = self.frame.size;
         CGPoint o = self.frame.origin;
-        
+    
         [UIView animateWithDuration:1.0f
                          animations:^{
                              //Redraws the hexagon with new color
                              [self.layer displayIfNeeded];
-                             
+                         
                              //Shrinking effect
                              [self setFrame:CGRectMake(o.x + s.width / 2, o.y + s.height / 2, s.width / 100, s.height / 100)];
-                             
+                         
                              //Rotation effect
                              self.transform = CGAffineTransformRotate(self.transform, M_PI);
                          }
@@ -119,15 +107,15 @@
                              [UIView animateWithDuration:1.0f
                                               animations:^{
                                                   [self.layer displayIfNeeded];
-                                                  
+                                              
                                                   //Growing effect
                                                   [self setFrame:CGRectMake(o.x, o.y, s.width, s.height)];
-                                                  
+                                              
                                                   //Rotation effect
                                                   self.transform = CGAffineTransformRotate(self.transform, M_PI);
                                               }
                                               completion:nil];
-        }];
+                         }];
     }
 }
 

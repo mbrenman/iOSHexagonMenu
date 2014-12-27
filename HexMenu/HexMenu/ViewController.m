@@ -90,9 +90,7 @@
     if (viewTag > 0) {
         NSLog(@"touched %d", viewTag);
         Hexagon *touchedHex = [self.hexagons objectAtIndex:(viewTag - 1)];
-        if ([touchedHex hexagonPathContains:touchPoint]) {
-            NSLog(@"AND IN PATH");
-        }
+        [touchedHex animateWithTouch:touchPoint];
     }
 }
 
