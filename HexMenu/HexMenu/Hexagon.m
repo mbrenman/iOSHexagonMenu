@@ -124,6 +124,35 @@
     }
 }
 
+- (void)transitionFromMenuTo:(CGPoint)p1 andTo: (CGPoint)p2 {
+    [UIView animateWithDuration:1.0f
+                     animations:^{
+                         //Redraws the hexagon with new color
+                         [self.layer displayIfNeeded];
+                         
+                         CGRect newFrame = [self frame];
+                         newFrame.origin.x = p1.x;
+                         newFrame.origin.y = p1.y;
+                         
+                         self.frame = newFrame;
+                     }
+                     completion:^(BOOL finished){
+                         //Move to p2
+                         [UIView animateWithDuration:1.0f
+                                          animations:^{
+                                              //Redraws the hexagon with new color
+                                              [self.layer displayIfNeeded];
+                                              
+                                              CGRect newFrame = [self frame];
+                                              newFrame.origin.x = p2.x;
+                                              newFrame.origin.y = p2.y;
+                                              
+                                              self.frame = newFrame;
+                                          }
+                                          completion:nil];
+                     }];
+}
+
 - (BOOL)hexagonPathContains:(CGPoint) point {
     return [_hexPath containsPoint:point];
 }

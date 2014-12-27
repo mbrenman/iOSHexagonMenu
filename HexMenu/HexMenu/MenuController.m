@@ -9,6 +9,8 @@
 #import "MenuController.h"
 #import "Hexagon.h"
 
+const float len = 75;
+
 @interface MenuController ()
 - (void)createHexagons;
 //- (void)respondToTapGesture:(UIGestureRecognizer *)recognizer;
@@ -27,8 +29,6 @@
 
 - (void)createHexagons {
     _hexagons = [[NSMutableArray alloc] init];
-    
-    float len = 75;
     
     float mid_x = CGRectGetMidX([self.view bounds]) - (len / 2);
     float mid_y = CGRectGetMidY([self.view bounds]) - (len / 2);
@@ -103,7 +103,56 @@
 }
 
 - (void)handleCenterButtonTap {
+    float mid_x = CGRectGetMidX([self.view bounds]) - (len / 2);
+    float mid_y = CGRectGetMidY([self.view bounds]) - (len / 2);
+    
     NSLog(@"CENTER");
+    if (_menuState) {
+        NSLog(@"Leave menu");
+        for (int i = 0; i < self.hexagons.count; i++) {
+            if (i != 4 && i != 5) {
+                Hexagon *h = [self.hexagons objectAtIndex:i];
+                CGPoint o = h.frame.origin;
+                o.y -= len;
+                
+                [h transitionFromMenuTo:o andTo:o];
+            }
+        }
+        
+        Hexagon *bottom_l = [self.hexagons objectAtIndex:4];
+        Hexagon *bottom_r = [self.hexagons objectAtIndex:5];
+        CGPoint bl_o = bottom_l.frame.origin;
+        CGPoint br_o = bottom_r.frame.origin;
+        
+        bl_o.y -= len;
+        br_o.y -= len;
+        
+        [bottom_l transitionFromMenuTo:bl_o andTo:CGPointMake(mid_x - len, mid_y - len)];
+        [bottom_r transitionFromMenuTo:br_o andTo:CGPointMake(mid_x + len, mid_y - len)];
+    } else {
+        NSLog(@"Go back to menu");
+        for (int i = 0; i < self.hexagons.count; i++) {
+            if (i != 4 && i != 5) {
+                Hexagon *h = [self.hexagons objectAtIndex:i];
+                CGPoint o = h.frame.origin;
+                o.y += len;
+                
+                [h transitionFromMenuTo:o andTo:o];
+            }
+        }
+        
+        Hexagon *bottom_l = [self.hexagons objectAtIndex:4];
+        Hexagon *bottom_r = [self.hexagons objectAtIndex:5];
+        CGPoint bl_o = bottom_l.frame.origin;
+        CGPoint br_o = bottom_r.frame.origin;
+        
+        bl_o.y += len;
+        br_o.y += len;
+        
+        [bottom_l transitionFromMenuTo:bl_o andTo:CGPointMake(mid_x - (len / 2), mid_y + (3 * len / 4))];
+        [bottom_r transitionFromMenuTo:br_o andTo:CGPointMake(mid_x + (len / 2), mid_y + (3 * len / 4))];
+    }
+    _menuState = !_menuState;
 }
 
 - (void)didReceiveMemoryWarning {

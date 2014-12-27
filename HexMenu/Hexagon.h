@@ -15,10 +15,9 @@
 
 @interface Hexagon : UIView
 
-
-
 - (BOOL)hexagonPathContains:(CGPoint) point;
 - (void)animateWithTouch:(CGPoint)touch;
+- (void)transitionFromMenuTo:(CGPoint)p1 andTo: (CGPoint)p2;
 
 @end
 
