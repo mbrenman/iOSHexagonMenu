@@ -20,6 +20,8 @@
 @property (nonatomic, weak) UIColor* fillColor;
 @property (nonatomic, weak) UIColor* strokeColor;
 
+- (BOOL)hexagonPathContains:(CGPoint) point;
+
 @end
 
 #endif
