@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AAF726D21A4BDCE5000119F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF726D11A4BDCE5000119F5 /* main.m */; };
 		AAF726D51A4BDCE5000119F5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF726D41A4BDCE5000119F5 /* AppDelegate.m */; };
-		AAF726D81A4BDCE5000119F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF726D71A4BDCE5000119F5 /* ViewController.m */; };
+		AAF726D81A4BDCE5000119F5 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF726D71A4BDCE5000119F5 /* MenuController.m */; };
 		AAF726DB1A4BDCE5000119F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAF726D91A4BDCE5000119F5 /* Main.storyboard */; };
 		AAF726DD1A4BDCE5000119F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF726DC1A4BDCE5000119F5 /* Images.xcassets */; };
 		AAF726E01A4BDCE5000119F5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAF726DE1A4BDCE5000119F5 /* LaunchScreen.xib */; };
@@ -33,8 +33,8 @@
 		AAF726D11A4BDCE5000119F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AAF726D31A4BDCE5000119F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AAF726D41A4BDCE5000119F5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AAF726D61A4BDCE5000119F5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AAF726D71A4BDCE5000119F5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AAF726D61A4BDCE5000119F5 /* MenuController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuController.h; sourceTree = "<group>"; };
+		AAF726D71A4BDCE5000119F5 /* MenuController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuController.m; sourceTree = "<group>"; };
 		AAF726DA1A4BDCE5000119F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAF726DC1A4BDCE5000119F5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AAF726DF1A4BDCE5000119F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -86,8 +86,8 @@
 			children = (
 				AAF726D31A4BDCE5000119F5 /* AppDelegate.h */,
 				AAF726D41A4BDCE5000119F5 /* AppDelegate.m */,
-				AAF726D61A4BDCE5000119F5 /* ViewController.h */,
-				AAF726D71A4BDCE5000119F5 /* ViewController.m */,
+				AAF726D61A4BDCE5000119F5 /* MenuController.h */,
+				AAF726D71A4BDCE5000119F5 /* MenuController.m */,
 				AAF726F71A4BDFFA000119F5 /* Hexagon.h */,
 				AAF726F81A4BE00E000119F5 /* Hexagon.m */,
 				AAF726D91A4BDCE5000119F5 /* Main.storyboard */,
@@ -224,7 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAF726D81A4BDCE5000119F5 /* ViewController.m in Sources */,
+				AAF726D81A4BDCE5000119F5 /* MenuController.m in Sources */,
 				AAF726D51A4BDCE5000119F5 /* AppDelegate.m in Sources */,
 				AAF726F91A4BE00E000119F5 /* Hexagon.m in Sources */,
 				AAF726D21A4BDCE5000119F5 /* main.m in Sources */,
@@ -420,6 +420,7 @@
 				AAF726F11A4BDCE5000119F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAF726F21A4BDCE5000119F5 /* Build configuration list for PBXNativeTarget "HexMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +429,7 @@
 				AAF726F41A4BDCE5000119F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

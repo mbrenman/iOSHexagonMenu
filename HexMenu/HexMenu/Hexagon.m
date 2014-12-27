@@ -10,6 +10,11 @@
 #import "Hexagon.h"
 
 @interface Hexagon ()
+@property (nonatomic, strong,) UIBezierPath *hexPath;
+@property (assign) BOOL clickable;
+@property (nonatomic, weak) UIColor* fillColor;
+@property (nonatomic, weak) UIColor* strokeColor;
+
 - (void)createHexagonIn:(CGRect)rect;
 - (float)randZeroOne;
 @end

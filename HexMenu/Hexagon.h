@@ -15,10 +15,7 @@
 
 @interface Hexagon : UIView
 
-@property (nonatomic, strong,) UIBezierPath *hexPath;
-@property (assign) BOOL clickable;
-@property (nonatomic, weak) UIColor* fillColor;
-@property (nonatomic, weak) UIColor* strokeColor;
+
 
 - (BOOL)hexagonPathContains:(CGPoint) point;
 - (void)animateWithTouch:(CGPoint)touch;

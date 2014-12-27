@@ -6,17 +6,17 @@
 //  Copyright (c) 2014 mbrenman. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MenuController.h"
 #import "Hexagon.h"
 
-@interface ViewController ()
+@interface MenuController ()
 - (void)createHexagons;
 //- (void)respondToTapGesture:(UIGestureRecognizer *)recognizer;
 @property (nonatomic, strong) NSMutableArray* hexagons;
 
 @end
 
-@implementation ViewController
+@implementation MenuController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

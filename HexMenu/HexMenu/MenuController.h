@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MenuController.h
 //  HexMenu
 //
 //  Created by Matt Brenman on 12/25/14.
@@ -10,7 +10,7 @@
 
 const int NUM_HEXAGONS = 6;
 
-@interface ViewController : UIViewController
+@interface MenuController : UIViewController
 
 
 @end
