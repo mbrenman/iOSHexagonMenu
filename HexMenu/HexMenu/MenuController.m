@@ -115,7 +115,7 @@ const float len = 75;
                 CGPoint o = h.frame.origin;
                 o.y -= len;
                 
-                [h transitionFromMenuTo:o andTo:o];
+                [h transitionFromMenuTo:o andTo:o andVisible:YES];
             }
         }
         
@@ -127,8 +127,12 @@ const float len = 75;
         bl_o.y -= len;
         br_o.y -= len;
         
-        [bottom_l transitionFromMenuTo:bl_o andTo:CGPointMake(mid_x - len, mid_y - len)];
-        [bottom_r transitionFromMenuTo:br_o andTo:CGPointMake(mid_x + len, mid_y - len)];
+        [bottom_l transitionFromMenuTo:bl_o
+                                 andTo:CGPointMake(mid_x - len, mid_y - len)
+                          andVisible: NO];
+        [bottom_r transitionFromMenuTo:br_o
+                                 andTo:CGPointMake(mid_x + len, mid_y - len)
+                          andVisible: NO];
     } else {
         NSLog(@"Go back to menu");
         for (int i = 0; i < self.hexagons.count; i++) {
@@ -137,7 +141,7 @@ const float len = 75;
                 CGPoint o = h.frame.origin;
                 o.y += len;
                 
-                [h transitionFromMenuTo:o andTo:o];
+                [h transitionFromMenuTo:o andTo:o andVisible:YES];
             }
         }
         
@@ -149,8 +153,12 @@ const float len = 75;
         bl_o.y += len;
         br_o.y += len;
         
-        [bottom_l transitionFromMenuTo:bl_o andTo:CGPointMake(mid_x - (len / 2), mid_y + (3 * len / 4))];
-        [bottom_r transitionFromMenuTo:br_o andTo:CGPointMake(mid_x + (len / 2), mid_y + (3 * len / 4))];
+        [bottom_l transitionFromMenuTo:bl_o
+                                 andTo:CGPointMake(mid_x - (len / 2), mid_y + (3 * len / 4))
+                          andVisible: YES];
+        [bottom_r transitionFromMenuTo:br_o
+                                 andTo:CGPointMake(mid_x + (len / 2), mid_y + (3 * len / 4))
+                           andVisible:YES];
     }
     _menuState = !_menuState;
 }

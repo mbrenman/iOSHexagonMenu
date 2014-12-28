@@ -17,7 +17,7 @@
 
 - (BOOL)hexagonPathContains:(CGPoint) point;
 - (void)animateWithTouch:(CGPoint)touch;
-- (void)transitionFromMenuTo:(CGPoint)p1 andTo: (CGPoint)p2;
+- (void)transitionFromMenuTo:(CGPoint)p1 andTo: (CGPoint)p2 andVisible: (BOOL)isVisible;
 
 @end
 

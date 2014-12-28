@@ -124,7 +124,7 @@
     }
 }
 
-- (void)transitionFromMenuTo:(CGPoint)p1 andTo: (CGPoint)p2 {
+- (void)transitionFromMenuTo:(CGPoint)p1 andTo: (CGPoint)p2 andVisible: (BOOL)isVisible {
     [UIView animateWithDuration:1.0f
                      animations:^{
                          //Redraws the hexagon with new color
@@ -146,6 +146,8 @@
                                               CGRect newFrame = [self frame];
                                               newFrame.origin.x = p2.x;
                                               newFrame.origin.y = p2.y;
+                                              
+                                              self.alpha = isVisible ? 1 : 0;
                                               
                                               self.frame = newFrame;
                                           }
